@@ -1,0 +1,333 @@
+/* =========================
+   GLOBAL RESET & BASE
+========================= */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: -apple-system, BlinkMacSystemFont, "San Francisco", sans-serif;
+}
+
+/* Page background & typography */
+body {
+  background: linear-gradient(135deg, #eaeef5, #d6dbe6);
+  min-height: 100vh;
+  color: #1d1d1f;
+}
+
+
+/* =========================
+   GLASS UI (Reusable)
+========================= */
+.glass {
+  background: rgba(255, 255, 255, 0.6);
+  backdrop-filter: blur(20px);
+  border-radius: 20px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+}
+
+
+/* =========================
+   HEADER (Floating / Glass)
+========================= */
+.header {
+  position: fixed;
+  top: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+
+  width: 90%;
+  padding: 12px 25px;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  z-index: 1000;
+
+  background: rgba(255,255,255,0.6);
+  backdrop-filter: blur(20px);
+  border-radius: 20px;
+}
+
+/* Navigation links */
+.nav a {
+  margin-left: 20px;
+  text-decoration: none;
+  color: #333;
+  transition: 0.3s;
+}
+
+.nav a:hover {
+  opacity: 0.6;
+}
+
+
+/* =========================
+   LAYOUT (2-COLUMN GRID)
+========================= */
+.layout {
+  display: grid;
+  grid-template-columns: 260px 1fr; /* Sidebar | Content */
+  gap: 40px;
+
+  max-width: 1200px;
+  margin: 0 auto;
+
+  padding: 120px 20px 100px; /* offset for fixed header + footer */
+}
+
+
+/* =========================
+   SIDEBAR
+========================= */
+.sidebar {
+  position: sticky;
+  top: 100px; /* stick below header */
+
+  height: fit-content;
+  padding: 20px;
+
+  background: rgba(255,255,255,0.6);
+  backdrop-filter: blur(20px);
+  border-radius: 20px;
+}
+
+.sidebar h3 {
+  margin-bottom: 10px;
+}
+
+.sidebar ul li {
+  margin-bottom: 8px;
+  cursor: pointer;
+}
+
+/* Tag chips */
+.tags span {
+  display: inline-block;
+  padding: 6px 12px;
+  margin: 5px 5px 0 0;
+
+  border-radius: 12px;
+  background: rgba(0,0,0,0.05);
+
+  font-size: 13px;
+}
+
+
+/* =========================
+   CONTENT WRAPPER
+========================= */
+.content {
+  display: flex;
+  flex-direction: column;
+}
+
+
+/* =========================
+   CAROUSEL
+========================= */
+.carousel {
+  position: relative;
+  height: 340px;
+
+  margin: 40px 0;
+  overflow: hidden;
+
+  display: flex;
+  align-items: center;
+}
+
+/* Base image styling */
+.carousel img {
+  position: absolute;
+
+  width: 520px;
+  aspect-ratio: 4 / 3;
+  height: auto;
+
+  object-fit: cover;
+  border-radius: 20px;
+
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  transition: all 0.6s ease;
+}
+
+/* Center (focused) image */
+.carousel .slide.main img {
+  transform: translate(-50%, -50%) scale(1);
+  z-index: 3;
+  opacity: 1;
+}
+
+/* Left preview image */
+.carousel .slide.left img {
+  transform: translate(-140%, -50%) scale(0.6);
+  opacity: 0.6;
+  filter: blur(6px);
+  z-index: 2;
+}
+
+/* Right preview image */
+.carousel .slide.right img {
+  transform: translate(40%, -50%) scale(0.6);
+  opacity: 0.6;
+  filter: blur(6px);
+  z-index: 2;
+}
+
+/* Hidden images */
+.carousel .slide:not(.main):not(.left):not(.right) img {
+  opacity: 0;
+}
+
+
+/* =========================
+   POSTS LIST
+========================= */
+.posts {
+  max-width: 900px;
+}
+
+/* Individual post card */
+.post {
+  display: flex;
+  gap: 20px;
+
+  margin-bottom: 30px;
+  padding: 15px;
+
+  background: rgba(255,255,255,0.6);
+  backdrop-filter: blur(20px);
+  border-radius: 18px;
+
+  transition: 0.3s;
+
+  align-items: center;
+}
+
+.post:hover {
+  transform: scale(1.02);
+  box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+}
+
+/* Post thumbnail */
+.post img {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+/* Post text */
+.post h2 {
+  margin-bottom: 10px;
+}
+
+/* =========================
+   FOOTER (FIXED BAR)
+========================= */
+.footer {
+  position: fixed;
+  bottom: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+
+  width: 90%;
+
+  display: flex;
+  justify-content: space-between;
+
+  padding: 10px 20px;
+
+  background: rgba(255,255,255,0.6);
+  backdrop-filter: blur(20px);
+  border-radius: 20px;
+}
+
+.footer a {
+  margin-left: 10px;
+  text-decoration: none;
+  color: #333;
+}
+
+
+/* =========================
+   SCROLLBAR (WebKit)
+========================= */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(0,0,0,0.2);
+  border-radius: 10px;
+}
+
+
+/* =========================
+   RESPONSIVE
+========================= */
+@media (max-width: 768px) {
+
+  /* Collapse to single column */
+  .layout {
+    grid-template-columns: 1fr;
+  }
+
+  .sidebar {
+    position: relative;
+    top: 0;
+  }
+
+  /* Stack post layout */
+  .post {
+    flex-direction: column;
+  }
+
+  .post img {
+    width: 100%;
+  }
+
+  /* Simplify carousel */
+  .carousel .left,
+  .carousel .right {
+    display: none;
+  }
+
+  .carousel .main {
+    width: 90%;
+  }
+
+  .header {
+    width: 95%;
+  }
+
+  .footer {
+    width: 95%;
+    flex-direction: column;
+    gap: 5px;
+    text-align: center;
+  }
+}
+
+.hero-macos {
+  margin: 20px;
+  padding: 50px;
+  border-radius: 24px;
+
+  background: url('/image/art-bg.png') center/cover;
+  color: white;
+}
+
+.hero-content h1 {
+  font-size: 40px;
+}
+
+.hero-sub {
+  color: #6e6e73;
+  margin-top: 10px;
+}
