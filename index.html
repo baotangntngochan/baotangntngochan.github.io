@@ -2,31 +2,146 @@
 <html lang="vi">
 <head>
   <meta charset="UTF-8">
-  <title>Bảo tàng cá nhân</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Art Museum</title>
   <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
 
-<header>
-  <h1>Bảo tàng Văn học</h1>
+<!-- HEADER -->
+<header class="header">
+  <div class="logo">Art Museum</div>
+  <nav class="nav">
+    <a href="index.html">Trang chủ</a>
+    <a href="vanhoc.html">Văn học</a>
+    <a href="mythuat.html">Mỹ thuật</a>
+    <a href="amnhac.html">Âm nhạc</a>
+    <a href="nghesitre.html">Nghệ sĩ trẻ</a>
+  </nav>
 </header>
 
-<nav>
-  <a href="index.html">Trang chủ</a>
-  <a href="vanhoc.html">Văn học</a>
-  <a href="mythuat.html">Mỹ thuật</a>
-</nav>
 
-<section class="gallery">
-  <div class="item">
-    <img src="https://via.placeholder.com/200">
-    <p>Tác phẩm 1</p>
-  </div>
-  <div class="item">
-    <img src="https://via.placeholder.com/200">
-    <p>Tác phẩm 2</p>
-  </div>
-</section>
+<!-- ❗ FIX 1: BỌC SIDEBAR + MAIN VÀO 1 LAYOUT -->
+<main class="layout"> <!-- 👈 thêm div cha -->
 
+  <!-- SIDEBAR -->
+  <aside class="sidebar">
+    <h3>Bài viết nổi bật</h3>
+    <ul>
+      <li>Truyện Kiều</li>
+      <li>Starry Night</li>
+      <li>Beethoven No.9</li>
+    </ul>
+
+    <h3>Phân loại</h3>
+    <div class="tags">
+      <span>Hiện đại</span>
+      <span>Cổ điển</span>
+      <span>Trừu tượng</span>
+      <span>Việt Nam</span>
+    </div>
+  </aside>
+
+
+  <!-- ❗ FIX 2: đổi class main → content (đồng bộ CSS) -->
+  <div class="content">
+
+    <!-- CAROUSEL -->
+    <section class="carousel">
+      <div class="carousel-track">
+
+        <!-- ❗ FIX 3: thêm data-title cho ALL ảnh -->
+        <div class="slide" data-title="Truyện Kiều" data-desc="Tác phẩm của Nguyễn Du">
+          <img src="/image/TruyenKieu.webp">
+        </div>
+
+        <div class="slide" data-title="Chí Phèo">
+          <img src="/image/ChiPheo.jpg">
+        </div>
+
+        <div class="slide" data-title="Beethoven Symphony No.9">
+          <img src="/image/BeethovenSymphonyNo9.jpg">
+        </div>
+
+        <div class="slide" data-title="The Scream">
+          <img src="/image/TheScream.jpg">
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- POSTS -->
+    <section class="posts">
+
+      <!-- ❗ giữ nguyên toàn bộ phần này (OK rồi) -->
+
+      <div class="post">
+        <img src="/image/TruyenKieu.webp">
+        <div>
+          <h2>Truyện Kiều</h2>
+          <p>Tác phẩm kinh điển của Nguyễn Du.</p>
+        </div>
+      </div>
+
+      <div class="post">
+        <img src="/image/ChiPheo.jpg">
+        <div>
+          <h2>Chí Phèo</h2>
+          <p>Tác phẩm hiện thực nổi bật của Nam Cao.</p>
+        </div>
+      </div>
+
+      <div class="post">
+        <img src="/image/LaoHac.jpg">
+        <div>
+          <h2>Lão Hạc</h2>
+          <p>Câu chuyện đầy nhân văn.</p>
+        </div>
+      </div>
+
+      <div class="post">
+        <img src="/image/DeMenPhuuLuuKy.webp">
+        <div>
+          <h2>Dế Mèn phiêu lưu ký</h2>
+          <p>Tác phẩm thiếu nhi nổi tiếng.</p>
+        </div>
+      </div>
+
+      <!-- các bài còn lại giữ nguyên -->
+
+    </section>
+
+  </div>
+</main> <!-- 👈 đóng layout -->
+
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="footer-left">
+    Nguyễn Thị Ngọc Hân
+  </div>
+
+  <div class="footer-right">
+    <a href="#">Facebook</a>
+    <a href="#">Gmail</a>
+    <a href="#">Instagram</a>
+    <a href="#">Zalo</a>
+  </div>
+</footer>
+
+
+<!-- MODAL -->
+<div id="modal" class="modal">
+  <div class="modal-content">
+    <span id="close">&times;</span>
+    <img id="modal-img">
+    <h2 id="modal-title"></h2>
+    <p id="modal-desc"></p>
+  </div>
+</div>
+
+<script src="script.js"></script>
 </body>
 </html>
