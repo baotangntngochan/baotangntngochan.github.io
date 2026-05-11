@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Văn học - Art Museum</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<!-- HEADER -->
+</head>
+
+<body>
+
+  <header class="header">
+
+    <div class="logo">
+      Art Museum
+    </div>
+
+    <button class="mobile-toggle" id="mobileToggle">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+
+    <nav class="nav">
+      <a href="index.html">Trang chủ</a>
+      <a href="vanhoc.html" class="active">Văn học</a>
+      <a href="mythuat.html">Mỹ thuật</a>
+      <a href="amnhac.html">Âm nhạc</a>
+    </nav>
+
+    <!-- Search Trigger -->
+    <button class="search-trigger" id="openSearch">
+
+      <span class="search-icon">
+        <svg viewBox="0 0 24 24" fill="none">
+          <circle cx="11" cy="11" r="6.5" stroke="currentColor" stroke-width="2"/>
+          <path d="M16 16L21 21" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+        </svg>
+      </span>
+
+      <span class="search-placeholder">
+        Search...
+      </span>
+
+      <span class="search-shortcut">
+        ⌘+K
+      </span>
+
+    </button>
+
+  </header>
+
+
+  <!-- SEARCH POPUP -->
+  <div class="search-overlay" id="searchOverlay">
+
+    <div class="search-modal">
+
+      <div class="search-top">
+
+        <svg class="search-top-icon" viewBox="0 0 24 24" fill="none">
+          <circle cx="11" cy="11" r="6.5" stroke="currentColor" stroke-width="2"/>
+          <path d="M16 16L21 21" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+        </svg>
+
+        <input
+          type="text"
+          id="searchInput"
+          placeholder="Search artworks, books, music..."
+          autocomplete="off"
+        >
+
+      </div>
+
+      <div class="search-results" id="searchResults"></div>
+
+    </div>
+
+  </div>
+
+
+<!-- LAYOUT -->
+<main class="layout">
+
+  <!-- SIDEBAR -->
+  <aside class="sidebar">
+    <h3>Tác phẩm nổi bật</h3>
+    <ul>
+      <li>Truyện Kiều</li>
+      <li>Chí Phèo</li>
+      <li>Lão Hạc</li>
+    </ul>
+
+    <h3>Phân loại</h3>
+
+    <div class="tags">
+
+      <span class="tag active"
+            data-filter="all">
+        Tất cả
+      </span>
+
+      <span class="tag"
+            data-filter="hien-thuc">
+        Hiện thực
+      </span>
+
+      <span class="tag"
+            data-filter="lang-man">
+        Lãng mạn
+      </span>
+
+      <span class="tag"
+            data-filter="thieu-nhi">
+        Thiếu nhi
+      </span>
+
+      <span class="tag"
+          data-filter="viet-nam">
+      Việt Nam
+    </span>
+
+  </div>
+
+  </aside>
+
+  <!-- CONTENT -->
+  <div class="content">
+
+    <!-- TIÊU ĐỀ -->
+    <section class="hero-macos">
+
+      <!-- ảnh -->
+      <img class="hero-bg active" src="/banner/BannerVanHoc1.jpg">
+      <img class="hero-bg" src="/banner/BannerVanHoc2.png">
+      <img class="hero-bg" src="/banner/BannerVanHoc3.jpg">
+
+      <!-- overlay -->
+      <div class="hero-overlay"></div>
+
+      <!-- nội dung -->
+      <div class="hero-content">
+        <h1>Văn học</h1>
+        <p class="hero-sub">Kho tàng ngôn từ và cảm xúc</p>
+        <p class="hero-desc">
+        Những tác phẩm phản ánh con người và chiều sâu tâm hồn.
+        </p>
+      </div>
+    </section>
+
+    <!-- =========================
+          POSTS FRAME
+      ========================= -->
+      <div class="posts-frame">
+
+        <!-- =========================
+            POSTS LIST
+        ========================= -->
+        <section class="posts"
+                id="postsList">
+
+          <!-- TRUYỆN KIỀU -->
+        <a class="post-link"
+          href="/works/truyen-kieu.html"
+          data-tags="co-dien lang-man viet-nam">
+
+          <article class="post">
+
+            <img src="/image/TruyenKieu.webp"
+                alt="Truyện Kiều">
+
+            <div>
+
+              <h2>Truyện Kiều</h2>
+
+              <p>
+                Kiệt tác văn học của Nguyễn Du.
+              </p>
+
+            </div>
+
+          </article>
+
+        </a>
+
+
+        <!-- CHÍ PHÈO -->
+        <a class="post-link"
+          href="/works/chi-pheo.html"
+          data-tags="hien-thuc hien-dai viet-nam">
+
+          <article class="post">
+
+            <img src="/image/ChiPheo.jpg"
+                alt="Chí Phèo">
+
+            <div>
+
+              <h2>Chí Phèo</h2>
+
+              <p>
+                Tác phẩm hiện thực nổi bật của Nam Cao.
+              </p>
+
+            </div>
+
+          </article>
+
+        </a>
+
+
+        <!-- LÃO HẠC -->
+        <a class="post-link"
+          href="/works/lao-hac.html"
+          data-tags="hien-thuc hien-dai viet-nam">
+
+          <article class="post">
+
+            <img src="/image/LaoHac.jpg"
+                alt="Lão Hạc">
+
+            <div>
+
+              <h2>Lão Hạc</h2>
+
+              <p>
+                Câu chuyện đầy nhân văn về người nông dân.
+              </p>
+
+            </div>
+
+          </article>
+
+        </a>
+
+
+        <!-- DẾ MÈN PHIÊU LƯU KÝ -->
+        <a class="post-link"
+          href="/works/de-men-phieu-luu-ky.html"
+          data-tags="thieu-nhi hien-dai viet-nam">
+
+          <article class="post">
+
+            <img src="/image/DeMenPhuuLuuKy.webp"
+                alt="Dế Mèn phiêu lưu ký">
+
+            <div>
+
+              <h2>Dế Mèn phiêu lưu ký</h2>
+
+              <p>
+                Tác phẩm thiếu nhi nổi tiếng của Tô Hoài.
+              </p>
+
+            </div>
+
+          </article>
+
+        </a>
+
+
+        <!-- NHẬT KÝ ĐẶNG THÙY TRÂM -->
+        <a class="post-link"
+          href="/works/nhat-ky-dang-thuy-tram.html"
+          data-tags="hien-dai viet-nam">
+
+          <article class="post">
+
+            <img src="/image/NhatKyDangThuyTram.jpg"
+                alt="Nhật ký Đặng Thùy Trâm">
+
+            <div>
+
+              <h2>Nhật ký Đặng Thùy Trâm</h2>
+
+              <p>
+                Những dòng nhật ký đầy xúc động thời chiến.
+              </p>
+
+            </div>
+
+          </article>
+
+        </a>
+
+
+        <!-- SỐ ĐỎ -->
+        <a class="post-link"
+          href="/works/so-do.html"
+          data-tags="hien-thuc hien-dai viet-nam">
+
+          <article class="post">
+
+            <img src="/image/SoDo.jpg"
+                alt="Số đỏ">
+
+            <div>
+
+              <h2>Số đỏ</h2>
+
+              <p>
+                Tiểu thuyết trào phúng nổi tiếng của Vũ Trọng Phụng.
+              </p>
+
+            </div>
+
+          </article>
+
+        </a>
+
+        <!-- DOI THỪA -->
+        <a class="post-link"
+          href="/works/doi-thua.html"
+          data-tags="hien-thuc hien-dai viet-nam">
+
+          <article class="post">
+
+            <img src="/image/DoiThua.webp"
+                alt="Đời thừa">
+
+            <div>
+
+              <h2>Đời thừa</h2>
+
+              <p>
+                Tác phẩm phản ánh bi kịch người trí thức.
+              </p>
+
+            </div>
+
+          </article>
+
+        </a>
+
+        </section>
+        <!-- =========================
+            PAGINATION
+        ========================= -->
+        <div class="posts-pagination"
+            id="postsPagination">
+        </div>
+
+      </div>
+
+
+</main>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="footer-left">
+    Nguyễn Thị Ngọc Hân
+  </div>
+
+  <div class="footer-right">
+    <a href="https://www.facebook.com/ahncgon">Facebook</a>
+    <a href="https://mail.google.com/mail/?view=cm&fs=1&to=tenemailcuaban@example.com">Gmail</a>
+    <a href="https://www.instagram.com/nqhann.08/">Instagram</a>
+    <a href="https://zalo.me/0812516051">Zalo</a>
+  </div>
+</footer>
+
+</body>
+<script src="script.js"></script>
+</html>
